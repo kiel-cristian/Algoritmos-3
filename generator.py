@@ -29,7 +29,9 @@ class InputGenerator:
 				left = 0
 			rigth = previous + (dist[1] + 1) - dist[0]
 
-			rand_num = randint(left,rigth)
+			rand_num = previous
+			while rand_num == previous:
+				rand_num = randint(left,rigth)
 			previous = rand_num
 			self.__uniform.append(rand_num)
 		return self.__uniform
