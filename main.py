@@ -35,14 +35,23 @@ def get_stadistics(array):
 def do_experiment(N,M,instance,sequence,instance_var,search_var,search_alg):
 	times = []
 	counter = 0
+
 	print "Experimento: " + str(e) + " | n: " + str(N) + " | m: " + str(M) + " | instancia: " + instance_var + " | busqueda: " + search_var + " | algoritmo: " + search_alg
 	for k in range(1,11):	
 		time1 = time()
 		for elem in sequence:
-			s.bin_search(instance,0,N-1,elem)
+			if search_alg == "busqueda-binaria":
+				b = s.bin_search(instance,0,N-1,elem)
+			elif search_alg == "busqueda-interpolacion":
+				s.interpolation_search(instance,0,N-1,elem)
+			else:
+				s.mix_inter_search(instance,0,N-1,elem)
+
 		time2 = time()
 		if k ==1:
 			counter += s.get_counter()
+		else:
+			s.get_counter()
 		deltat = time2-time1
 		# print "tiempo: " + str(deltat) + " | comparaciones(total): " + str(counter) + " | comparaciones(unitaria): " + str(counter/M)
 		times.append(deltat)
@@ -51,16 +60,16 @@ def do_experiment(N,M,instance,sequence,instance_var,search_var,search_alg):
 	sigma = sta[1]
 	print "tiempo(estadistico): " + str(mu) + " +/- " + str(sigma) + "| comparaciones(total): " + str(counter) + " | comparaciones(unitaria): " + str(counter/M) + "\n"
 
-for i in range(1,2): #(1,11)
+for i in range(1,5): #(1,11)
 	instances = g.generate_next_instance()
-	for j in range(1,3):
-		for instance_var in instance_vars:
-			if instance_var == "aleatoria-uniforme":
-				instance = instances[0]
-			else:
-				instance = instances[1]
-
-			sequences = seq.generate_next_sequences(instance,0,N-1,M,N)
+	for instance_var in instance_vars:
+		if instance_var == "aleatoria-uniforme":
+			instance = instances[0]
+		else:
+			instance = instances[1]
+		
+		for j in range(1,3):
+			sequences = seq.generate_next_sequences(instance,instance_var,0,N-1,M,N)
 
 			for search_var in search_vars:
 				if search_var == "aleatoria-uniforme":

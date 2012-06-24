@@ -12,6 +12,7 @@ class Sequence:
 		self.__m = m
 		self.__instance = None
 		self.__a = None
+		self.reset = False
 
 	def __calculate_a(self,n):
 		s = 0.0
@@ -36,12 +37,11 @@ class Sequence:
 		return i-1
 
 	def random_uniform_seq(self,instance,l,r,m = 4*2**10):
-		if len(self.__rand_uniform) == 0:
-		 	rang = m
+		if self.reset == True:
+			self.__rand_uniform = []
+			rang = 4+2**10
 		else:
-			rang = len(self.__rand_uniform)
-
-		# print rang
+			rang = m
 
 		sequence = []
 		for i in range(0,rang):
@@ -53,10 +53,12 @@ class Sequence:
 	def random_beginning_seq(self,instance,l,r,m = 4*2**10,n = 2**10):
 		a = self.__a
 
-		if len(self.__rand_beginning) == 0:
-		 	rang = m
+		if self.reset == True:
+			self.__rand_uniform = []
+			rang = 4+2**10
+			self.reset = False
 		else:
-			rang = len(self.__rand_beginning)
+			rang = m
 
 		# print "a : " + str(a)
 		sequence = []
@@ -67,20 +69,24 @@ class Sequence:
 		self.__rand_beginning = self.__rand_beginning + sequence
 		return self.__rand_beginning
 
-	def generate_next_sequences(self,instance,l,r,m,n):
-		if self.__rand_uniform == [] or n > self.__n or self.__instance != instance:
-			# print "change"
-			# print self.__n
-			# print "n : " + str(n)
-			# print "m : " + str(m)
-
-			self.__rand_uniform = []
-			self.__rand_beginning = []
+	def generate_next_sequences(self,instance,i_type,l,r,m,n):
+		if i_type!= self.__instance or m != self.__m or n != self.__n:
+			# print "Change"
+			self.reset = True
 			self.__calculate_a(n)
-			self.__n = n
-			self.__instance = instance
 
-		return [self.random_uniform_seq(instance,l,r,m),self.random_beginning_seq(instance,l,r,m,n)]
+			if i_type!= self.__instance:
+				self.__instance = i_type
+
+			if m != self.__m:
+				self.__m = m
+
+			if n != self.__n:
+				self.__n = n
+
+		uniform = self.random_uniform_seq(instance,l,r,m)
+		beginning = self.random_beginning_seq(instance,l,r,m,n)
+		return [uniform,beginning]
 
 	def test(self):
 		instance = []

@@ -3,6 +3,8 @@
 from random import randint
 from printlist import print_list as pl
 
+import sys
+
 class Search:
 	def __init__(self):
 		self.__counter = 0
@@ -20,6 +22,20 @@ class Search:
 			if instance[l] == x:
 				self.__counter += 1
 				return x
+		elif r-l == 1:
+			if instance[r] == x:
+				self.__counter += 1
+				return x
+			elif instance[l] == x:
+				self.__counter += 2
+				return x
+			else:
+				print "Error"
+				print x
+				print instance[l]
+				print instance[r]
+				pl("error",instance)
+				sys.exit()
 		else:
 			return -1
 
@@ -28,7 +44,7 @@ class Search:
 		if a == x:
 			return x
 
-		m = (r + l)/ 2 + 1
+		m = (r + l)/ 2 + (r + l)%2
 		# print "-> m : " + str(m)
 
 		self.__counter += 1
@@ -45,12 +61,12 @@ class Search:
 		p = l + (r-l)*(x-instance[l]) /(instance[r]-instance[l])
 		# print "-> p : " + str(p)
 
-		if instance[p] < x:
+		if x< instance[p]:
 			self.__counter += 1
 			return self.interpolation_search(instance,l,p-1,x)
 		elif x > instance[p]:
 			self.__counter += 2
-			return self.interpolation_search(instance,p,r,x)
+			return self.interpolation_search(instance,p+1,r,x)
 		else:
 			self.__counter += 2
 			return x
@@ -60,7 +76,7 @@ class Search:
 		if a == x:
 			return x
 
-		m = (r + l)/ 2 + 1
+		m = (r + l)/ 2 + (r + l)%2
 		# print "-> m : " + str(m)
 
 		self.__counter += 1
@@ -82,7 +98,7 @@ class Search:
 			return self.__one_step_bin_search(instance,l,p-1,x)
 		elif x > instance[p]:
 			self.__counter += 2
-			return self.__one_step_bin_search(instance,p,r,x)
+			return self.__one_step_bin_search(instance,p+1,r,x)
 		else:
 			self.__counter += 2
 			return x
