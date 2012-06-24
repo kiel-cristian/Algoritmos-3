@@ -62,14 +62,21 @@ def do_experiment(N,M,instance,sequence,instance_var,search_var,search_alg):
 
 for i in range(1,5): #(1,11)
 	instances = g.generate_next_instance()
+
 	for instance_var in instance_vars:
+
 		if instance_var == "aleatoria-uniforme":
 			instance = instances[0]
 		else:
 			instance = instances[1]
+
+		M = 4*N
+		seq.reset_sequences(M)
 		
 		for j in range(1,3):
-			sequences = seq.generate_next_sequences(instance,instance_var,0,N-1,M,N)
+			if e< 24 and e>30:
+				break
+			sequences = seq.generate_next_sequences(instance,0,N-1,N)
 
 			for search_var in search_vars:
 				if search_var == "aleatoria-uniforme":
@@ -80,5 +87,6 @@ for i in range(1,5): #(1,11)
 				for search_alg in search_algs:
 					do_experiment(N,M,instance,sequence,instance_var,search_var,search_alg)
 					e = e+1
-		M = M*2
+
+			M = M*2
 	N = N*2
