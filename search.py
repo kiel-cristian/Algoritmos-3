@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from random import randint
+from printlist import print_list as pl
 
 class Search:
-	def __init__(self,instance):
-		self.__instance = instance
+	def __init__(self):
 		self.__counter = 0
 
 	def get_counter(self):
@@ -28,7 +28,7 @@ class Search:
 		if a == x:
 			return x
 
-		m = (r + l)/ 2 + (r+l)%2
+		m = (r + l)/ 2 + 1
 		# print "-> m : " + str(m)
 
 		self.__counter += 1
@@ -60,7 +60,7 @@ class Search:
 		if a == x:
 			return x
 
-		m = (r + l)/ 2 + (r+l)%2
+		m = (r + l)/ 2 + 1
 		# print "-> m : " + str(m)
 
 		self.__counter += 1
@@ -91,24 +91,27 @@ class Search:
 		return self.__one_step_bin_search(instance,l,r,x)
 
 	def test(self):
-		a = [1,3,4,5,6,7,8,9,10,11]
+		a = []
+		for i in range(0,2**10):
+			a.append(i)
 
 		l = 0
 		r = len(a) -1
 		x = 4
+		pl("a",a)
 
 		print "mix search"
-		print self.mix_inter_search(a,l,r,x)
+		self.mix_inter_search(a,l,r,x)
 		print "comparations : " + str(self.get_counter())
 
 		print "bin search"
-		print self.bin_search(a,l,r,x)
+		self.bin_search(a,l,r,x)
 		print "comparations : " + str(self.get_counter())
 
 		print "inter search"
-		print self.interpolation_search(a,l,r,x)
+		self.interpolation_search(a,l,r,x)
 		print "comparations : " + str(self.get_counter())
 
 #ejemplo de uso en funcion test
-# s = Search([1,2])
+# s = Search()
 # s.test()
