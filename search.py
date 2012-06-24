@@ -50,17 +50,6 @@ class Search:
 			return -1
 
 	def bin_search(self,instance,l,r,x):
-		if self.last_len < 0 or self.last_len > r-l + 1:
-			# print "init"
-			self.last_len = r-l + 1
-		# else:
-			# print "recursion fail"
-			# print "l : " + str(l)
-			# print "r : " + str(r)
-			# print "x : " + str(x)
-			# pl("instance",instance)
-			# sys.exit()
-
 		a = self.__in_range(instance,l,r,x)
 		if a == x:
 			return x
@@ -68,14 +57,14 @@ class Search:
 		m = (r + l)/ 2 + 1
 		# print "-> m : " + str(m)
 
-		print "elemento en m : " + str(instance[m])
+		# print "elemento en m : " + str(instance[m])
 
 		self.__counter += 1
 		if x < instance[m]:
-			print "<"
+			# print "<"
 			return self.bin_search(instance,l,m-1,x)
 		else:
-			print ">="
+			# print ">="
 			return self.bin_search(instance,m,r,x)
 
 	def interpolation_search(self,instance,l,r,x):

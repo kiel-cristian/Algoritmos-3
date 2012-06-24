@@ -75,6 +75,8 @@ for i in range(1,5): #(1,11)
 		seq.reset_sequences(M)
 
 		for j in range(1,3):
+			# if e<36 or e>37:
+			# 	continue
 			sequences = seq.generate_next_sequences(instance,0,N-1,N)
 
 			for search_var in search_vars:
@@ -86,8 +88,8 @@ for i in range(1,5): #(1,11)
 				for search_alg in search_algs:
 					e = e+1
 
-					if e<36:
-						continue
+					# if e<36 or e>37:
+					# 	continue
 
 					do_experiment(N,M,instance,sequence,instance_var,search_var,search_alg)
 					

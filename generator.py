@@ -57,12 +57,11 @@ class InputGenerator:
 		return self.__uniform
 
 	def __random_gen(self,n = 2**10):
-		random = []
 		for i in range(0,n):
-			random.append(randint(self.__range[0],self.__range[1]))
-		random = radix_sort(random,32)
-		self.__random = self.__random + random
-		return self.__random
+			self.__random.append(randint(self.__range[0],self.__range[1]))
+		random = radix_sort(self.__random,32)
+		self.__random = random
+		return random
 
 	def reset_instance(self):
 		self.__uniform = []
