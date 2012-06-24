@@ -60,8 +60,20 @@ def do_experiment(N,M,instance,sequence,instance_var,search_var,search_alg):
 	sigma = sta[1]
 	print "tiempo(estadistico): " + str(mu) + " +/- " + str(sigma) + "| comparaciones(total): " + str(counter) + " | comparaciones(unitaria): " + str(counter/M) + "\n"
 
-for i in range(1,5): #(1,11)
-	instances = g.generate_next_instance()
+i=1
+while i < 11: #(1,11)
+	while i <6:
+		print "generating"
+		instances = g.generate_next_instance()
+		i += 1
+		continue
+
+	print "end skip"
+	print i
+
+	e = 97
+
+
 	N = len(instances[0])
 
 	for instance_var in instance_vars:
@@ -96,3 +108,4 @@ for i in range(1,5): #(1,11)
 
 
 			M = M*2
+	i += 1

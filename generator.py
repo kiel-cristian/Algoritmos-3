@@ -80,16 +80,11 @@ class InputGenerator:
 
 	def test(self):
 		for i in range(0,10):
+			print i
 			r = self.generate_next_instance()
 			if i == 5:
 				pl("uniform",r[0])
 				pl("random",r[1])
-			p = r[0][0]
-			for item in r[0]:
-				if item > p + 16:
-					print "Error en item " + str(item)
-				else:
-					p = item
 
 #Ejemplo de uso en test:
 # ig = InputGenerator()
