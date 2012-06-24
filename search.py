@@ -110,5 +110,5 @@ class Search:
 		print "comparations : " + str(self.get_counter())
 
 #ejemplo de uso en funcion test
-s = Search([1,2])
-s.test()
+# s = Search([1,2])
+# s.test()
