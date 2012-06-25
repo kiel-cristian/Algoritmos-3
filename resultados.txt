@@ -286,3 +286,75 @@ tiempo(estadistico): 0.11190226078 +/- 0.00012544422257| comparaciones(total): 1
 Experimento: 96 | n: 8192 | m: 65536 | instancia: aleatoria-dominio | busqueda: aleatoria-inicio | algoritmo: busqueda-inter-mixta
 tiempo(estadistico): 0.215589141846 +/- 0.000380062595543| comparaciones(total): 243095 | comparaciones(unitaria): 3
 
+Experimento: 97 | n: 16384 | m: 65536 | instancia: aleatoria-uniforme | busqueda: aleatoria-uniforme | algoritmo: busqueda-binaria
+tiempo(estadistico): 0.917438077927 +/- 0.00159750837657| comparaciones(total): 950210 | comparaciones(unitaria): 14
+
+Experimento: 98 | n: 16384 | m: 65536 | instancia: aleatoria-uniforme | busqueda: aleatoria-uniforme | algoritmo: busqueda-interpolacion
+tiempo(estadistico): 0.257228779793 +/- 0.000726187933156| comparaciones(total): 328532 | comparaciones(unitaria): 5
+
+Experimento: 99 | n: 16384 | m: 65536 | instancia: aleatoria-uniforme | busqueda: aleatoria-uniforme | algoritmo: busqueda-inter-mixta
+tiempo(estadistico): 0.468184041977 +/- 0.00132779953749| comparaciones(total): 520708 | comparaciones(unitaria): 7
+
+Experimento: 100 | n: 16384 | m: 65536 | instancia: aleatoria-uniforme | busqueda: aleatoria-inicio | algoritmo: busqueda-binaria
+tiempo(estadistico): 0.93532781601 +/- 0.000776666193473| comparaciones(total): 970345 | comparaciones(unitaria): 14
+
+Experimento: 101 | n: 16384 | m: 65536 | instancia: aleatoria-uniforme | busqueda: aleatoria-inicio | algoritmo: busqueda-interpolacion
+tiempo(estadistico): 0.109597039223 +/- 0.000137548017607| comparaciones(total): 158749 | comparaciones(unitaria): 2
+
+Experimento: 102 | n: 16384 | m: 65536 | instancia: aleatoria-uniforme | busqueda: aleatoria-inicio | algoritmo: busqueda-inter-mixta
+tiempo(estadistico): 0.213506197929 +/- 0.000164222102892| comparaciones(total): 240578 | comparaciones(unitaria): 3
+
+Experimento: 103 | n: 16384 | m: 131072 | instancia: aleatoria-uniforme | busqueda: aleatoria-uniforme | algoritmo: busqueda-binaria
+tiempo(estadistico): 1.83407690525 +/- 0.0064223961157| comparaciones(total): 1900531 | comparaciones(unitaria): 14
+
+Experimento: 104 | n: 16384 | m: 131072 | instancia: aleatoria-uniforme | busqueda: aleatoria-uniforme | algoritmo: busqueda-interpolacion
+tiempo(estadistico): 0.517959499359 +/- 0.00712899218552| comparaciones(total): 656627 | comparaciones(unitaria): 5
+
+Experimento: 105 | n: 16384 | m: 131072 | instancia: aleatoria-uniforme | busqueda: aleatoria-uniforme | algoritmo: busqueda-inter-mixta
+tiempo(estadistico): 0.944760608673 +/- 0.00956062692279| comparaciones(total): 1041420 | comparaciones(unitaria): 7
+
+Experimento: 106 | n: 16384 | m: 131072 | instancia: aleatoria-uniforme | busqueda: aleatoria-inicio | algoritmo: busqueda-binaria
+tiempo(estadistico): 1.88167312145 +/- 0.00619935711685| comparaciones(total): 1940863 | comparaciones(unitaria): 14
+
+Experimento: 107 | n: 16384 | m: 131072 | instancia: aleatoria-uniforme | busqueda: aleatoria-inicio | algoritmo: busqueda-interpolacion
+tiempo(estadistico): 0.21966278553 +/- 0.000928378822764| comparaciones(total): 316689 | comparaciones(unitaria): 2
+
+Experimento: 108 | n: 16384 | m: 131072 | instancia: aleatoria-uniforme | busqueda: aleatoria-inicio | algoritmo: busqueda-inter-mixta
+tiempo(estadistico): 0.429974579811 +/- 0.00215392165315| comparaciones(total): 479849 | comparaciones(unitaria): 3
+
+Experimento: 109 | n: 16384 | m: 65536 | instancia: aleatoria-dominio | busqueda: aleatoria-uniforme | algoritmo: busqueda-binaria
+tiempo(estadistico): 0.917152190208 +/- 0.00215590655147| comparaciones(total): 950173 | comparaciones(unitaria): 14
+
+Experimento: 110 | n: 16384 | m: 65536 | instancia: aleatoria-dominio | busqueda: aleatoria-uniforme | algoritmo: busqueda-interpolacion
+tiempo(estadistico): 0.297413706779 +/- 0.000324532340584| comparaciones(total): 393038 | comparaciones(unitaria): 5
+
+Experimento: 111 | n: 16384 | m: 65536 | instancia: aleatoria-dominio | busqueda: aleatoria-uniforme | algoritmo: busqueda-inter-mixta
+tiempo(estadistico): 0.53115568161 +/- 0.00373904384842| comparaciones(total): 610196 | comparaciones(unitaria): 9
+
+Experimento: 112 | n: 16384 | m: 65536 | instancia: aleatoria-dominio | busqueda: aleatoria-inicio | algoritmo: busqueda-binaria
+tiempo(estadistico): 0.935669898987 +/- 0.000835850131482| comparaciones(total): 970302 | comparaciones(unitaria): 14
+
+Experimento: 113 | n: 16384 | m: 65536 | instancia: aleatoria-dominio | busqueda: aleatoria-inicio | algoritmo: busqueda-interpolacion
+tiempo(estadistico): 0.10872657299 +/- 0.00039077224127| comparaciones(total): 162220 | comparaciones(unitaria): 2
+
+Experimento: 114 | n: 16384 | m: 65536 | instancia: aleatoria-dominio | busqueda: aleatoria-inicio | algoritmo: busqueda-inter-mixta
+tiempo(estadistico): 0.208590316772 +/- 0.000623753307586| comparaciones(total): 243606 | comparaciones(unitaria): 3
+
+Experimento: 115 | n: 16384 | m: 131072 | instancia: aleatoria-dominio | busqueda: aleatoria-uniforme | algoritmo: busqueda-binaria
+tiempo(estadistico): 1.82233629227 +/- 0.00443535955299| comparaciones(total): 1900345 | comparaciones(unitaria): 14
+
+Experimento: 116 | n: 16384 | m: 131072 | instancia: aleatoria-dominio | busqueda: aleatoria-uniforme | algoritmo: busqueda-interpolacion
+tiempo(estadistico): 0.592581033707 +/- 0.00174217312477| comparaciones(total): 784656 | comparaciones(unitaria): 5
+
+Experimento: 117 | n: 16384 | m: 131072 | instancia: aleatoria-dominio | busqueda: aleatoria-uniforme | algoritmo: busqueda-inter-mixta
+tiempo(estadistico): 1.0598764658 +/- 0.00435790433828| comparaciones(total): 1219890 | comparaciones(unitaria): 9
+
+Experimento: 118 | n: 16384 | m: 131072 | instancia: aleatoria-dominio | busqueda: aleatoria-inicio | algoritmo: busqueda-binaria
+tiempo(estadistico): 1.87577610016 +/- 0.00201648245543| comparaciones(total): 1940669 | comparaciones(unitaria): 14
+
+Experimento: 119 | n: 16384 | m: 131072 | instancia: aleatoria-dominio | busqueda: aleatoria-inicio | algoritmo: busqueda-interpolacion
+tiempo(estadistico): 0.217112278938 +/- 0.000258719522063| comparaciones(total): 324251 | comparaciones(unitaria): 2
+
+Experimento: 120 | n: 16384 | m: 131072 | instancia: aleatoria-dominio | busqueda: aleatoria-inicio | algoritmo: busqueda-inter-mixta
+tiempo(estadistico): 0.415985560417 +/- 0.00153363752936| comparaciones(total): 487157 | comparaciones(unitaria): 3
+
