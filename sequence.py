@@ -3,6 +3,8 @@
 from random import randint,uniform
 from math import ceil
 from printlist import print_list as pl
+from time import time
+from sys import exit
 
 class Sequence:
 	def __init__(self,m=4*2**10):
@@ -21,6 +23,41 @@ class Sequence:
 		# print self.__a
 
 		return self.__a
+
+	def __calculate_p_2_rec(self,a,l,r,y):
+		if l==r:
+			if y <= a/(l+1) and y >a/(l+2):
+				return l-1
+		elif r-l == 1:
+			y_sup = a/(l+1)
+			y_inf = a/(l+2)
+
+			if y <= y_sup and y > y_inf:
+				return l-1
+			elif y <= y_inf:
+				return l
+			else:
+				print "-> l :" + str(l)
+				print "-> r :" + str(r)
+				print "-> y :" + str(y)
+
+				print "y sup : " + str(y_sup)
+				print "y inf : " + str(y_inf)
+				print "Error en secuencias"
+				exit()
+
+		p = (l+r)/2
+
+		if y > a/(p+1):
+			return self.__calculate_p_2_rec(a,l,p-1,y)
+		elif y < a/(p+2):
+			return self.__calculate_p_2_rec(a,p+1,r,y)
+		else:
+			return p-1
+
+	def __calculate_p_2(self,a,n):
+		y = uniform(a/(n+1),a)
+		return self.__calculate_p_2_rec(a,1,n+1,y)
 
 	def __calculate_p(self,a,n):
 		y = uniform(a/(n+1),a)
@@ -47,7 +84,7 @@ class Sequence:
 		a = self.__a
 		sequence = []
 		for i in range(0,self.__m):
-			p = self.__calculate_p(a,n)
+			p = self.__calculate_p_2(a,n)
 			sequence.append(instance[p])
 		
 		self.__rand_beginning = self.__rand_beginning + sequence
@@ -59,13 +96,23 @@ class Sequence:
 		self.reset = True
 		self.__m = m
 
-	def generate_next_sequences(self,instance,l,r,n):
+	def generate_next_sequences(self,instance,l,r,n,test= False):
 		if self.reset:
 			self.__calculate_a(n)
 			self.reset = False
 
+		if test:
+			time1 = time()
 		uniform = self.random_uniform_seq(instance,l,r)
+		if test:
+			print "benchmark random: " + str(time()-time1)
+
+		if test:
+			time1 = time()
 		beginning = self.random_beginning_seq(instance,l,r,n)
+		if test:
+			print "benchmark random beginning: " + str(time()-time1)
+
 		return [uniform,beginning]
 
 	def test(self):
@@ -81,10 +128,10 @@ class Sequence:
 			print n
 			r = n - 1
 			m = 4*n
-			print "-> m: " + str(m)
+			print "-> M: " + str(m)
 			self.reset_sequences(m)
 			while m<=8*n:
-				sequences = self.generate_next_sequences(instance,l,r,n)
+				sequences = self.generate_next_sequences(instance,l,r,n,True)
 				uniform = sequences[0]
 				begin   = sequences[1]		
 				pl("random uniform",uniform)

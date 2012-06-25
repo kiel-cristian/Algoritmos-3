@@ -3,7 +3,7 @@
 from random import randint
 from printlist import print_list as pl
 
-import sys
+from sys import exit
 
 class Search:
 	def __init__(self):
@@ -45,7 +45,7 @@ class Search:
 						break
 
 				pl("error",instance)
-				sys.exit()
+				exit()
 		else:
 			return -1
 
