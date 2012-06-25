@@ -101,17 +101,17 @@ class Sequence:
 			self.__calculate_a(n)
 			self.reset = False
 
-		if test:
-			time1 = time()
+		# if test:
+		# 	time1 = time()
 		uniform = self.random_uniform_seq(instance,l,r)
-		if test:
-			print "benchmark random: " + str(time()-time1)
+		# if test:
+		# 	print "benchmark random: " + str(time()-time1)
 
-		if test:
-			time1 = time()
+		# if test:
+		# 	time1 = time()
 		beginning = self.random_beginning_seq(instance,l,r,n)
-		if test:
-			print "benchmark random beginning: " + str(time()-time1)
+		# if test:
+		# 	print "benchmark random beginning: " + str(time()-time1)
 
 		return [uniform,beginning]
 
