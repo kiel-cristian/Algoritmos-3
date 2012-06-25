@@ -62,19 +62,8 @@ def do_experiment(N,M,instance,sequence,instance_var,search_var,search_alg):
 
 i=1
 while i < 11: #(1,11)
-	while i <6:
-		print "generating"
-		instances = g.generate_next_instance()
-		i += 1
-		continue
-
-	print "end skip"
-	print i
-
-	e = 97
-
-
-	N = len(instances[0])
+	print "N -> " + str(N)
+	instances = g.generate_next_instance()
 
 	for instance_var in instance_vars:
 
@@ -109,3 +98,4 @@ while i < 11: #(1,11)
 
 			M = M*2
 	i += 1
+	N = N*2

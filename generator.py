@@ -82,10 +82,13 @@ class InputGenerator:
 		for i in range(0,10):
 			print i
 			r = self.generate_next_instance()
-			if i == 5:
+			if i == 6:
 				pl("uniform",r[0])
 				pl("random",r[1])
 
-#Ejemplo de uso en test:
+			# if i == 9:
+			# 	print len(r[0])
+
+# Ejemplo de uso en test:
 # ig = InputGenerator()
 # ig.test()
