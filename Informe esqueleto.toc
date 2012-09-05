@@ -1,0 +1,19 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Presentaci\'on}{1}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{1}
+\contentsline {chapter}{\numberline {2}Hipotesis}{2}
+\contentsline {section}{\numberline {2.1}Dise\~no Experimental}{2}
+\contentsline {subsection}{\numberline {2.1.1}Algoritmos de busqueda}{2}
+\contentsline {subsubsection}{Busqueda Binaria}{2}
+\contentsline {subsubsection}{Busqueda por Interpolacion}{2}
+\contentsline {subsubsection}{Busqueda Inter-Mixta}{3}
+\contentsline {section}{\numberline {2.2}Hipotesis}{3}
+\contentsline {chapter}{\numberline {3}Resultados}{4}
+\contentsline {section}{\numberline {3.1}Busqueda Binaria}{5}
+\contentsline {section}{\numberline {3.2}Busqueda por Interpolacion}{6}
+\contentsline {section}{\numberline {3.3}Busqueda Inter-Mixta}{7}
+\contentsline {chapter}{\numberline {4}Analisis}{8}
+\contentsline {section}{\numberline {4.1}Graficos}{8}
+\contentsline {section}{\numberline {4.2}Interpretacion de Resultados}{8}
+\contentsline {chapter}{\numberline {5}Conclusiones}{15}
+\contentsline {section}{\numberline {5.1}Conclusiones}{15}
