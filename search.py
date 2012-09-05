@@ -5,6 +5,12 @@ from printlist import print_list as pl
 
 from sys import exit
 
+#conflicto
+
+
+
+
+
 class Search:
 	def __init__(self):
 		self.__counter = 0
